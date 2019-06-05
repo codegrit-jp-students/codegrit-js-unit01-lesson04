@@ -95,6 +95,8 @@ function paragraphColor() {
 paragraphColor(); // 関数の呼び出し
 ```
 
+<iframe width="100%" height="300" src="//jsfiddle.net/codegrit_hiro/3syna492/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 少し先のレッスンで学ぶ内容が2つ出てきましたが、**function, 関数**と**for ... of ループ**は、簡単に説明するとそれぞれ**動詞、アクションの動きをするもの**と**特定要素に対して繰り返し処理を行うもの**です。
 関数はレッスン9、**for ... of ループ**はレッスン7で詳しく学びます。
 
@@ -139,6 +141,8 @@ function paragraphReset() {
 paragraphReset(); // 関数の呼び出し
 ```
 
+<iframe width="100%" height="300" src="//jsfiddle.net/codegrit_hiro/n5gcukqv/1/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 ## data属性
 
 HTML5にあるdata属性を利用すると、それぞれの要素にJavaScriptで変化/変更する情報を追加することができるようになります。
@@ -150,10 +154,10 @@ HTML5にあるdata属性を利用すると、それぞれの要素にJavaScript�
 <p>I'm the first one.</p>
 <p>And I'm the second one.</p>
 
-<button data-action="paragraph">
+<button data-action="addStyle">
   文字色と太さが変わる
 </button>
-<button data-action="removeParagraphStyle">
+<button data-action="resetStyle">
   文字色と太さをリセット
 </button>
 ```
@@ -163,9 +167,12 @@ data属性を呼ぶには、HTMLで`data-action`もしくは必要であれば`c
  この時に少し気をつけたいのが、data属性の記述方法は今までのCSSセレクタとは異なるものなので、少しだけ異なります。
 
 ```js
-const paragraphAction = document.querySelectorAll('[data-action="paragraph"]');
-console.log(paragraphAction[0].dataset); // 出力結果：DOMStringMap {action: "paragraph"}
+const paragraphAction = document.querySelectorAll('[data-action="addStyle"]');
+console.log(paragraphAction[0].dataset); // 出力結果：DOMStringMap {action: "addStyle"}
 ```
+
+<iframe width="100%" height="300" src="//jsfiddle.net/codegrit_hiro/sy47durw/2/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 consoleでは、paragraphActionが対象になっている要素、つまり「文字色と太さが変わる」ボタンがdatasetとして呼び出されているかの確認です。
 
 さて、これでdata属性は呼び出すことができましたが、機能的には仮のボタンがある状態で押したところでテキストの文字色とフォントの太さのスタイルが変わるという機能は備わっていません。
